@@ -10,6 +10,8 @@ Inspired by [rit3zh's portfolio on X](https://x.com/rit3zh). This is a new, cons
 
 Copy this **one file** into each application's repository as `DESIGN_SYSTEM.md`. Give it to your designer, developer, or coding agent before implementation. The document contains the visual direction, portable tokens, component behavior, motion recipes, screen patterns, and a source ledger. It has no required companion assets or remote fonts.
 
+**Visual companion:** the repository's [README gallery](README.md) shows light and dark components, three mobile screen examples, forms and overlays, and a matched-expansion motion example. Its [rendering source](examples/render.py) reads the tokens in this file. The specification remains usable by itself when copied into another project.
+
 For the default app, use **neutral surfaces + native sans typography + restrained violet + one meaningful signature interaction per task area**. Choose light or dark according to the use context and the user's system setting. Keep all behavior available with reduced motion and opaque materials.
 
 **Reading order:** [Design language](#design-language) → [Foundations](#foundations) → [Portable tokens](#portable-tokens) → [Components](#components) → [Signature interactions](#signature-interactions) → [Screen recipes](#screen-recipes) → [Adoption](#adoption) → [Evidence and coverage](#evidence-and-coverage).
