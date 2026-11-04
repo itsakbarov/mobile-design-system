@@ -1,12 +1,12 @@
-# Meld Mobile
+# Custom UI Design System
 
 A shared design language for mobile applications: neutral surfaces, native-feeling typography, restrained violet, and interactions that keep their context.
 
-[Design system](MELD_MOBILE_DESIGN_SYSTEM.md) · [Components](#component-examples) · [Forms & overlays](#forms-and-overlays) · [Motion](#motion-example) · [Use in your app](#use-in-your-app)
+[Design system](CUSTOM_UI_DESIGN_SYSTEM.md) · [Components](#component-examples) · [Forms & overlays](#forms-and-overlays) · [Motion](#motion-example) · [Use in your app](#use-in-your-app)
 
-![Meld Mobile applied to three mobile screens: a light collection library, a dark artwork-led music player, and a dark writing assistant.](assets/meld-overview.png)
+![Custom UI Design System applied to three mobile screens: a light collection library, a dark artwork-led music player, and a dark writing assistant.](assets/custom-ui-overview.png)
 
-These original reference illustrations are rendered from the tokens in [MELD_MOBILE_DESIGN_SYSTEM.md](MELD_MOBILE_DESIGN_SYSTEM.md). They show how the same foundations can support different products. The [rendering source](examples/render.py) is included.
+These original reference illustrations are rendered from the tokens in [CUSTOM_UI_DESIGN_SYSTEM.md](CUSTOM_UI_DESIGN_SYSTEM.md). They show how the same foundations can support different products. The [rendering source](examples/render.py) is included.
 
 ## Screen examples
 
@@ -41,7 +41,7 @@ The same anatomy uses the dark semantic palette, raised neutral surfaces, and a 
 | Text roles | **35/40** display, **28/36** title, **20/28** heading, **17/24** body, **14/20** label |
 | Action colors | Light **#6E56CF**; dark **#BAA7FF** |
 
-Sizes are logical units. The [specification](MELD_MOBILE_DESIGN_SYSTEM.md#components) defines state behavior, text scaling, accessibility, and platform adaptations beyond these still images.
+Sizes are logical units. The [specification](CUSTOM_UI_DESIGN_SYSTEM.md#components) defines state behavior, text scaling, accessibility, and platform adaptations beyond these still images.
 
 ## Forms and overlays
 
@@ -68,7 +68,7 @@ The transition illustrates the **480 ms signature token** and `cubic-bezier(0.22
 
 ## Use in your app
 
-1. Copy [MELD_MOBILE_DESIGN_SYSTEM.md](MELD_MOBILE_DESIGN_SYSTEM.md) into your project as `DESIGN_SYSTEM.md`.
+1. Copy [CUSTOM_UI_DESIGN_SYSTEM.md](CUSTOM_UI_DESIGN_SYSTEM.md) into your project as `DESIGN_SYSTEM.md`.
 2. Choose the **Core**, **Media**, **Assistant**, or **Editorial** profile and the appropriate theme.
 3. Implement shared semantic tokens and components, including their loading, empty, error, and recovery states.
 4. Add a signature interaction where it improves the task, with reduced-motion and opaque-material fallbacks.
@@ -90,6 +90,6 @@ The renderer reads the specification's JSON token block directly, draws the icon
 
 The examples are visual reference illustrations. Native components and their interaction semantics are implemented in the consuming application.
 
-## Sources
+## References
 
-Meld is an original consolidated system inspired by [rit3zh's portfolio](https://x.com/rit3zh). The specification includes a [source-linked review of 64 video posts](MELD_MOBILE_DESIGN_SYSTEM.md#evidence-and-coverage), exact source anchors, and the original designers' credits. The example screens use fictional content and original procedural artwork.
+Design research and original source credits are kept in the [reference appendix](docs/REFERENCES.md). The example screens use fictional content and original procedural artwork created for this repository.

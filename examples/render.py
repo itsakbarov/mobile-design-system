@@ -1,4 +1,4 @@
-"""Render the README's original visual examples from Meld's authoritative tokens.
+"""Render the README's original visual examples from Custom UI Design System tokens.
 
 Run from any directory: python examples/render.py
 Requires Pillow. No network, downloaded artwork, or bundled fonts are used.
@@ -16,7 +16,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'assets'
 SCALE = 2
-SPEC = (ROOT / 'MELD_MOBILE_DESIGN_SYSTEM.md').read_text(encoding='utf-8')
+SPEC = (ROOT / 'CUSTOM_UI_DESIGN_SYSTEM.md').read_text(encoding='utf-8')
 TOKENS = json.loads(re.search(r'```json\n(.*?)\n```', SPEC, re.S).group(1))
 COLORS = TOKENS['color']
 
@@ -242,7 +242,7 @@ def artwork(w,h,variant='tide'):
             x,y=rng.random()*w,rng.random()*h*.65
             c.circle(x,y,.5,'#D6C9FF')
         if w>200:
-            c.text(w*.09,h*.1,'ELIA NORTH',w*.035,'#E5DEFF','medium')
+            c.text(w*.09,h*.1,'AMBIENT SERIES',w*.035,'#E5DEFF','medium')
             c.text(w*.09,h*.205,'After',w*.12,'#FFFFFF','medium')
             c.text(w*.09,h*.337,'the tide',w*.12,'#FFFFFF','medium')
     else:
@@ -298,7 +298,7 @@ def screen_player():
     c.text(195,93,'Now playing',14,p['textSecondary'],'medium',anchor='mm')
     c.paste(artwork(342,342),24,145,342,342,32)
     c.text(24,525,'After the tide',28,p['textPrimary'],'medium',max_width=280)
-    c.text(24,568,'Elia North · 2026',17,p['textSecondary'])
+    c.text(24,568,'Ambient collection · 2026',17,p['textSecondary'])
     c.icon('heart',333,531,24,p['textPrimary'])
     c.rect((24,617,366,621),p['divider'],2)
     c.rect((24,617,171,621),p['action'],2)
@@ -321,7 +321,7 @@ def screen_assistant():
     p=COLORS['dark']; c=Canvas(390,844,p['canvas'])
     status_bar(c,p)
     c.icon('back',26,82,24,p['textPrimary'])
-    c.text(195,78,'Meld assistant',17,p['textPrimary'],'medium',anchor='mt')
+    c.text(195,78,'Writing assistant',17,p['textPrimary'],'medium',anchor='mt')
     c.text(195,103,'Writing partner',12,p['textSecondary'],anchor='mt')
     c.icon('more',338,82,24,p['textPrimary'])
     c.rect((61,156,366,236),p['surfaceRaised'],16)
@@ -473,9 +473,9 @@ def overview(screens):
     p=COLORS['light']; c=Canvas(1440,1160,p['canvas'])
     c.text(64,48,'Made to feel connected.',35,p['textPrimary'],'medium')
     c.text(64,104,'Three applications of the same mobile design language.',17,p['textSecondary'])
-    c.rect((1192,51,1376,101),p['surface'],25,p['divider'])
-    c.circle(1218,76,6,p['action'])
-    c.text(1237,76,'Meld Mobile',17,p['textPrimary'],'medium',anchor='lm')
+    c.rect((1060,51,1376,101),p['surface'],25,p['divider'])
+    c.circle(1086,76,6,p['action'])
+    c.text(1105,76,'Custom UI Design System',17,p['textPrimary'],'medium',anchor='lm',max_width=251)
     labels=(('Core','A collection library'),('Media','An artwork-led player'),('Assistant','A focused writing space'))
     xs=(64,540,1016); w=360; h=w*844/390
     for x,screen,(profile,desc) in zip(xs,screens,labels):
@@ -592,7 +592,7 @@ def main():
     ASSETS.mkdir(parents=True,exist_ok=True)
     screens=[screen_library(),screen_player(),screen_assistant()]
     for name,screen in zip(('library','player','assistant'),screens): screen.save(Path('screens')/(name+'.png'),full_resolution=True)
-    overview(screens).save(Path('meld-overview.png'))
+    overview(screens).save(Path('custom-ui-overview.png'))
     for theme in ('light','dark'):component_board(theme).save(Path('components-'+theme+'.png'))
     overlays_board().save(Path('forms-and-overlays.png'))
     motion_poster().save(Path('matched-expansion-still.png'))
